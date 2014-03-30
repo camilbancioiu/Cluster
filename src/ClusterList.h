@@ -1,13 +1,12 @@
 #ifndef CLUSTERLIST_H
 #define CLUSTERLIST_H
 
-#include <QAbstractListModel>
 #include <QList>
 #include "ClusterNode.h"
 
 #include "Nodes/NodeText.h"
 
-class ClusterList : public QAbstractListModel, public ClusterNode
+class ClusterList : public ClusterNode
 {
     Q_OBJECT
 private:
@@ -17,13 +16,6 @@ private:
 
 public:
     explicit ClusterList(QObject *parent = 0);
-
-    // QAbstractItemModel interface
-public:
-    int rowCount(const QModelIndex &index) const;
-    QVariant data(const QModelIndex &index, int role) const;
-    QVariant headerData(int section, Qt::Orientation orientation, int role);
-    Qt::ItemFlags flags(QModelIndex &index);
 
     // ClusterNode interface
 public:

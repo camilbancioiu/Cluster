@@ -3,11 +3,12 @@
 
 #include <QObject>
 
-class ClusterNode
+class ClusterNode : public QObject
 {
+    Q_OBJECT
 
 public:
-    explicit ClusterNode();
+    ClusterNode();
 
     virtual QString title() = 0;
     virtual long id() = 0;
