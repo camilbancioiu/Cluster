@@ -1,5 +1,5 @@
 #include "ClusterNode.h"
 
-ClusterNode::ClusterNode()
+ClusterNode::ClusterNode(QObject *parent) : QObject(parent)
 {
 }

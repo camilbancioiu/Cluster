@@ -1,6 +1,6 @@
 #include "ClusterList.h"
 
-ClusterList::ClusterList(QObject *parent)
+ClusterList::ClusterList(QObject *parent) : ClusterNode(parent)
 {
     L = new QList<ClusterNode*>();
 

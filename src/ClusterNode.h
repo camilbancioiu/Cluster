@@ -10,7 +10,7 @@ class ClusterNode : public QObject
     Q_PROPERTY(long internalId READ internalId)
 
 public:
-    ClusterNode();
+    ClusterNode(QObject *parent = 0);
 
     virtual QString title() = 0;
     virtual long internalId() = 0;
