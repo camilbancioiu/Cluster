@@ -23,10 +23,10 @@ QStringList ClusterList::titles()
     return titlesList;
 }
 
-QStringListModel ClusterList::titlesModel()
+QStringListModel* ClusterList::titlesModel()
 {
-    QStringListModel model;
-    model.setStringList(this->titles());
+    QStringListModel *model = new QStringListModel();
+    model->setStringList(this->titles());
     return model;
 }
 
