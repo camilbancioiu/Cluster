@@ -18,7 +18,6 @@ SOURCES += src/Cluster.cpp \
 OTHER_FILES += qml/Cluster.qml \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/Cluster.spec \
     rpm/Cluster.yaml \
     Cluster.desktop
