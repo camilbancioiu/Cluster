@@ -32,6 +32,12 @@ QVariant ClusterList::headerData(int section, Qt::Orientation orientation, int r
     return QObject::tr("Node");
 }
 
+Qt::ItemFlags ClusterList::flags(QModelIndex &index)
+{
+    Q_UNUSED(index);
+    return Qt::ItemIsEnabled;
+}
+
 QString ClusterList::title()
 {
     return Title;
