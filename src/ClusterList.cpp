@@ -1,6 +1,6 @@
 #include "ClusterList.h"
 
-ClusterList::ClusterList(QObject *parent = 0) : QAbstractListModel(parent)
+ClusterList::ClusterList(QObject *parent) : QAbstractListModel(parent)
 {
     L = new QList<ClusterNode*>();
 
@@ -11,13 +11,13 @@ ClusterList::ClusterList(QObject *parent = 0) : QAbstractListModel(parent)
     L->append(new NodeText("Lagrange"));
 }
 
-int ClusterList::rowCount(QModelIndex &parent)
+int ClusterList::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return L->size();
 }
 
-QVariant ClusterList::data(QModelIndex &index, int role)
+QVariant ClusterList::data(const QModelIndex &index, int role) const
 {
     Q_UNUSED(index);
     Q_UNUSED(role);

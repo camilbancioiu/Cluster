@@ -20,9 +20,10 @@ public:
 
     // QAbstractItemModel interface
 public:
-    int rowCount(QModelIndex &parent);
-    QVariant data(QModelIndex &index, int role);
+    int rowCount(const QModelIndex &index) const;
+    QVariant data(const QModelIndex &index, int role) const;
     QVariant headerData(int section, Qt::Orientation orientation, int role);
+    Qt::ItemFlags flags(QModelIndex &index);
 
     // ClusterNode interface
 public:
