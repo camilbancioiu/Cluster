@@ -20,7 +20,7 @@ public:
     // ClusterNode interface
 public:
     QString title();
-    long id();
+    long internalId();
 
     // Setters for properties of ClusterNode
 public:

@@ -16,7 +16,7 @@ QString ClusterList::title()
     return Title;
 }
 
-long ClusterList::id()
+long ClusterList::internalId()
 {
     return ID;
 }

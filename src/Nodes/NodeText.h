@@ -16,7 +16,7 @@ public:
     // ClusterNode interface
 public:
     QString title();
-    long id();
+    long internalId();
 
 public:
     void setTitle(QString t);
