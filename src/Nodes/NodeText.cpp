@@ -14,9 +14,9 @@ QString NodeText::title()
     return this->Content;
 }
 
-long NodeText::id()
+long NodeText::internalId()
 {
-    return this->id();
+    return this->ID;
 }
 
 void NodeText::setTitle(QString t)

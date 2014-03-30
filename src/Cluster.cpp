@@ -17,8 +17,6 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    ClusterList *X = new ClusterList();
-
     qmlRegisterType<ClusterList>("org.cluster", 1, 0, "ClusterList");
 
     return SailfishApp::main(argc, argv);
