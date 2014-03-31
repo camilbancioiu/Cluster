@@ -15,7 +15,7 @@ private:
     QList<ClusterNode*> *L;
 
 public:
-    explicit ClusterList(QObject *parent = 0);
+    ClusterList(QObject *parent = 0);
 
     // ClusterNode interface
 public:
