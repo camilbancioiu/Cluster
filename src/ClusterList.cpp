@@ -21,7 +21,11 @@ QVariant ClusterList::data(const QModelIndex &index, int role) const
 {
     Q_UNUSED(index);
     Q_UNUSED(role);
-    return L->at(index.row())->title();
+    if (role == Qt::EditRole) {
+        return L->at(index.row())->title().append(" - Edit");
+    } else {
+        return L->at(index.row())->title();
+    }
 }
 
 QVariant ClusterList::headerData(int section, Qt::Orientation orientation, int role)

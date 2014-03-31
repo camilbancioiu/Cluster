@@ -49,6 +49,7 @@ Page {
             height: Theme.itemSizeSmall
 
             Label {text: display}
+            Label {text: "  " + edit}
         }
     }
 }
