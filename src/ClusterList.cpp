@@ -1,6 +1,6 @@
 #include "ClusterList.h"
 
-ClusterList::ClusterList(QObject *parent) : ClusterNode(parent)
+ClusterList::ClusterList(QObject *parent) : QAbstractListModel(parent)
 {
     L = new QList<ClusterNode*>();
 
@@ -11,23 +11,31 @@ ClusterList::ClusterList(QObject *parent) : ClusterNode(parent)
     L->append(new NodeText("Lagrange"));
 }
 
-QStringList ClusterList::titles()
+int ClusterList::rowCount(const QModelIndex &parent) const
 {
-    QStringList titlesList;
-    if (L == NULL) {
-        return titlesList;
-    }
-    for (int i = 0; i < L->size(); i++) {
-        titlesList.append(L->at(i)->title());
-    }
-    return titlesList;
+    Q_UNUSED(parent);
+    return L->size();
 }
 
-QStringListModel* ClusterList::titlesModel()
+QVariant ClusterList::data(const QModelIndex &index, int role) const
 {
-    QStringListModel *model = new QStringListModel();
-    model->setStringList(this->titles());
-    return model;
+    Q_UNUSED(index);
+    Q_UNUSED(role);
+    return L->at(index.row())->title();
+}
+
+QVariant ClusterList::headerData(int section, Qt::Orientation orientation, int role)
+{
+    Q_UNUSED(section);
+    Q_UNUSED(orientation);
+    Q_UNUSED(role);
+    return QObject::tr("Node");
+}
+
+Qt::ItemFlags ClusterList::flags(QModelIndex &index)
+{
+    Q_UNUSED(index);
+    return Qt::ItemIsEnabled;
 }
 
 QString ClusterList::title()
