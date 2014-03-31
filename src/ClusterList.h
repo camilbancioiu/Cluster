@@ -2,8 +2,6 @@
 #define CLUSTERLIST_H
 
 #include <QList>
-#include <QStringList>
-#include <QStringListModel>
 #include "ClusterNode.h"
 
 #include "Nodes/NodeText.h"
@@ -17,8 +15,6 @@ private:
 
 public:
     explicit ClusterList(QObject *parent = 0);
-    QStringList titles();
-    QStringListModel *titlesModel();
 
     // ClusterNode interface
 public:
