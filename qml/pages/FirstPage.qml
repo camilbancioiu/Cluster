@@ -42,13 +42,13 @@ Page {
     SilicaListView {
         anchors.fill: parent
 
-        model: testClusterList.titlesModel
+        model: testClusterList
 
         delegate: Item {
             width: ListView.view.width
             height: Theme.itemSizeSmall
 
-            Label {text: modelData}
+            Label {text: display}
         }
     }
 }
