@@ -3,14 +3,10 @@
 
 #include <QObject>
 
-class ClusterNode : public QObject
+class ClusterNode
 {
-    Q_OBJECT
-    Q_PROPERTY(QString title READ title)
-    Q_PROPERTY(long internalId READ internalId)
-
 public:
-    ClusterNode(QObject *parent = 0);
+    ClusterNode();
 
     virtual QString title() = 0;
     virtual long internalId() = 0;
